@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}
+User
+{% endblock %}
+
+{% block content %}
+    <a href="{{ url_for('welcome') }}">Welcome Page</a>
+    <br>
+    <a href="{{ url_for('user_list_route') }}">
+        User List
+    </a>
+    
+    <h1>User</h1>
+    Name: {{ user.name }} <br>
+    Email: {{ user.email }}
+    <p>
+        <button>
+            <!--
+                -- manually hard-coded url --- icky! 
+                <a href="/user/{{ idx + 1}}">
+                    Next User
+                </a>
+            -->
+        {% if idx < max_idx %}
+            <!-- Auto generated url!! -->
+            <a href="{{ url_for('user_route', idx=idx + 1) }}">
+                Next User
+            </a>
+        {% else %} 
+            <a href="{{ url_for('user_route', idx=0) }}">
+                First User
+            </a>
+        {% endif %}
+        </button>
+    </p>
+    <p>
+        <a href="{{ url_for('remove_user_view', idx=idx) }}">
+            Delete User
+        </a>
+    </p>
+{% endblock %}

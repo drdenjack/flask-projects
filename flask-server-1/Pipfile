@@ -1,0 +1,23 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pytest = "*"
+pytest-flask = "*"
+coverage = "*"
+
+[packages]
+flask = "*"
+flask_sqlalchemy = "*"
+flask-prometheus-metrics = "*"
+psycopg2 = "*"
+python-dotenv = "*"
+structlog = "*"
+
+[requires]
+python_version = "3.8"
+
+[scripts]
+test = "pytest"

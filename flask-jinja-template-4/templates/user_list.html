@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}
+User List
+{% endblock %}
+
+{% block content %}
+    <a href="{{ url_for('welcome') }}">Welcome Page</a>
+    
+    <h1>User</h1>
+    <ul>
+    {% for user in user_list %}
+        <li>
+            Number: {{ loop.index0 }} <br>
+            Name: {{ user.name }} <br>
+            Email: {{ user.email }}
+            <a href="{{ url_for('user_route', idx=loop.index0) }}">
+                See User Page
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+
+    <br>
+    <a href="{{ url_for('add_user_view') }}">Add User</a>
+{% endblock %}

@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  database:
+    container_name: postgres-for-flask
+    image: postgres:latest
+    env_file:
+      - database.env
+    ports:
+      - 5432:5432
+    volumes:
+      - db_volume:/var/lib/postgresql
+
+volumes:
+  db_volume:

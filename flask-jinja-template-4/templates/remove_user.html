@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}
+Remove User
+{% endblock %}
+
+{% block content %}
+    <h1>Remove a User</h1>
+    Name: {{ user.name }} <br>
+    Email: {{ user.email }}
+    <form method="post">
+        <button type="submit">Yes</button>
+        <a href="{{ url_for('user_list_route') }}"> No </a>
+    </form>
+{% endblock %}
