@@ -84,3 +84,4 @@ def add_users_routes(app):
     #     app.add_url_rule(f'{url}<{pk_type}:{pk}>', view_func=view_func, methods=['GET', 'PUT', 'DELETE'])
 
     # register_api(UserAPI, 'user_api', '/users/', pk='user_id')
+    

@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   database:
-    container_name: postgres-for-flask
+    container_name: postgres-for-flask-sqlalchemy-1
     image: postgres:latest
     env_file:
       - database.env
